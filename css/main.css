@@ -692,6 +692,10 @@ ul.theCouple li {
 .desc h4 a {
 	color: inherit;
 }
+.desc a {
+	color: black;
+	font-weight: normal;
+}
 .hover_listing {
 	font-size: 0;
 	letter-spacing: 0;

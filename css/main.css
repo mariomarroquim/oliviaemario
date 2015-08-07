@@ -1861,3 +1861,17 @@ ul.submenu li a {
 	margin: 27px 0 0;
 }
 }
+
+.item-buttom {
+	cursor: pointer;
+}
+
+.item-buttom {
+	opacity: 0.6;
+  filter: alpha(opacity=60); /* For IE8 and earlier */
+}
+
+.item-buttom:hover, .item-buttom:focus {
+  opacity: 1.0;
+  filter: alpha(opacity=100); /* For IE8 and earlier */
+}

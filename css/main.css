@@ -1871,14 +1871,18 @@ ul.submenu li a {
 	cursor: pointer;
 }
 
-.item-buttom, .photo {
-	opacity: 0.6;
-  filter: alpha(opacity=60); /* For IE8 and earlier */
-}
-
 .item-buttom:hover, .item-buttom:focus {
-  opacity: 1.0;
-  filter: alpha(opacity=100); /* For IE8 and earlier */
+	opacity: 0.7;
+  filter: alpha(opacity=70); /* For IE8 and earlier */
 	transition-duration: 0.3s;
 	-webkit-transition-duration: 0.3s;
+}
+
+li p {
+	font-style: italic;
+}
+
+li span {
+	font-weight: bold;
+	color: #ee6593;
 }

@@ -18,25 +18,19 @@ $("#banner").superslides({
 
 jQuery(function($) {
   $(document).ready(function() {
-      //enabling stickUp on the '.navbar-wrapper' class
-      $(".navbar-wrapper").stickUp({
-          parts: {
-              0: "banner",
-              1: "theCouple",
-              2: "photoAlbum",
-              3: "eventsSchedule",
-              4: "rsvp"
-          },
-          itemClass: "menuItem",
-          itemHover: "active",
-          topMargin: "auto"
-      });
-
-      // run rlightbox
-      $(".lb").rlightbox();
-      $(".lb_title-overwritten").rlightbox({
-          overwriteTitle: true
-      });
+    //enabling stickUp on the '.navbar-wrapper' class
+    $(".navbar-wrapper").stickUp({
+        parts: {
+            0: "banner",
+            1: "theCouple",
+            2: "photoAlbum",
+            3: "eventsSchedule",
+            4: "rsvp"
+        },
+        itemClass: "menuItem",
+        itemHover: "active",
+        topMargin: "auto"
+    });
   });
 });
 

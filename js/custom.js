@@ -118,7 +118,6 @@ jQuery(function($) {
 }(jQuery));
 
 $(".item-buttom").click(function() {
-  $("#itemCode").val($(this).attr("data-item-code"));
   $("#code").val($(this).attr("data-item-code"));
   $("#itemForm").submit();
 });

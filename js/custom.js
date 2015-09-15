@@ -117,7 +117,13 @@ jQuery(function($) {
   });
 }(jQuery));
 
+/*
 $(".item-buttom").click(function() {
   $("#code").val($(this).attr("data-item-code"));
   $("#itemForm").submit();
+});
+*/
+
+$(".item-buttom").click(function() {
+  window.location.href = "https://go.gerencianet.com.br/#/cobranca/pagar/" + $(this).attr("data-item-code");
 });

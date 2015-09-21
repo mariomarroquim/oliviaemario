@@ -273,14 +273,19 @@
               <li class="span3 col-xs-12 col-sm-6 col-md-4 col-lg-4"><p>Saída Noturna (R$ 190,00) <span class="pull-right item-buttom" data-item-code="f9d7f41546f52b89e99a7ba3e800cfe08183584a"><i class="fa fa-shopping-cart"></i> Escolher</span></p><img class="group1 item-buttom" data-aload="images/gallery/9.jpg" alt="Foto do presente" data-item-code="f9d7f41546f52b89e99a7ba3e800cfe08183584a"/></li>
               <!--end thumb -->
             </ul>
+
+
           </div>
           <!-- /.row -->
-        </div>
 
-        <!--form action="https://pagseguro.uol.com.br/checkout/v2/payment.html" method="post" onsubmit="PagSeguroLightbox(this); return false;" id="itemForm" name="itemForm" style="display: none;">
-          <input type="hidden" id="code" name="code" value=""/>
-          <input type="image" src="https://p.simg.uol.com.br/out/pagseguro/i/botoes/pagamentos/209x48-comprar-assina.gif" name="submit" alt="Pague com PagSeguro - é rápido, grátis e seguro!"/>
-        </form-->
+          <br/>
+          <br/>
+          <br/>
+
+          <center>
+            <button type="button" data-toggle="modal" data-target="#modal-message" class="btn btn-default btn-lg btn-pink">Envie sua mensagem!</button>
+          </center>
+        </div>
       </section>
       <!--RSVP end -->
       <!--Footer start-->
@@ -314,12 +319,41 @@
     <script type="text/javascript" src="js/jquery.easing.min.js"></script>
     <script type="text/javascript" src="js/jquery.mousewheel.min.js"></script>
 
-    <!--PagSeguro-->
-    <!--script type="text/javascript" src="https://stc.pagseguro.uol.com.br/pagseguro/api/v2/checkout/pagseguro.lightbox.js"></script-->
-
     <!--for theme custom jquery-->
     <script type="text/javascript" src="js/custom.js"></script>
 
+    <div class="modal fade" id="modal-message">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+            <h4 class="modal-title">Mensagem para o casal</h4>
+          </div>
+          <div class="modal-body">
+            <div class="alert alert-success" style="display:none;" role="alert" id="modal-alert-success">
+              <strong>Mensagem enviada. Obrigado!!!</strong>
+            </div>
+
+            <div class="alert alert-danger" style="display:none;" role="alert" id="modal-alert-error">
+              <strong>Por favor, preencha o seu nome e a sua mensagem.</strong>
+            </div>
+
+            <form role="form" target="self_" action="javascript: postContactToGoogle()" id="modal-form">
+              <div class="form-group">
+                <label for="name" class="control-label">Seu nome:</label>
+                <input type="text" class="form-control" id="name" name="name">
+              </div>
+              <div class="form-group">
+                <label for="message" class="control-label">Sua mensagem:</label>
+                <textarea class="form-control" id="message" name="message"></textarea>
+              </div>
+
+              <button type="submit" class="btn btn-primary">Enviar</button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
   </body>
 
 </html>

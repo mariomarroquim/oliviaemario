@@ -117,13 +117,44 @@ jQuery(function($) {
   });
 }(jQuery));
 
-/*
-$(".item-buttom").click(function() {
-  $("#code").val($(this).attr("data-item-code"));
-  $("#itemForm").submit();
-});
-*/
-
 $(".item-buttom").click(function() {
   window.location.href = "https://go.gerencianet.com.br/#/cobranca/pagar/" + $(this).attr("data-item-code");
 });
+
+function postContactToGoogle(){
+  var name = $("#name").val();
+  var message = $("#message").val();
+
+  if (name !== "" && message !== "") {
+    $.ajax({
+      url: "https://docs.google.com/forms/d/1rA0U-6cxBi-3KIJxJcVFBwFdo5gXc6eEL0R3LL3Z9Fo/formResponse",
+      data: {"entry.1067170230" : name, "entry.1137276183" : message},
+      type: "POST",
+      dataType: "xml",
+      statusCode: {
+        0: function (){
+          $("#modal-alert-error").hide();
+          $("#modal-alert-success").show();
+          $("#modal-form").trigger("reset");
+        },
+        200: function (){
+          $("#modal-alert-error").hide();
+          $("#modal-alert-success").show();
+          $("#modal-form").trigger("reset");
+        },
+        400: function (){
+          $("#modal-alert-error").show();
+        },
+        404: function (){
+          $("#modal-alert-error").show();
+        },
+        500: function (){
+          $("#modal-alert-error").show();
+        }
+      }
+    });
+  }
+  else {
+    $("#modal-alert-error").show();
+  }
+}

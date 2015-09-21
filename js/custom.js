@@ -144,17 +144,21 @@ function postContactToGoogle(){
         },
         400: function (){
           $("#modal-alert-error").show();
+          $("#modal-alert-success").hide();
         },
         404: function (){
           $("#modal-alert-error").show();
+          $("#modal-alert-success").hide();
         },
         500: function (){
           $("#modal-alert-error").show();
+          $("#modal-alert-success").hide();
         }
       }
     });
   }
   else {
     $("#modal-alert-error").show();
+    $("#modal-alert-success").hide();
   }
 }

@@ -279,8 +279,6 @@
               <li class="span3 col-xs-12 col-sm-6 col-md-4 col-lg-4"><p>Dia na Praia (R$ 130,00) <span class="pull-right item-buttom" data-item-code="fdd647985dc9427593135727485ef8df121ac7bc"><i class="fa fa-shopping-cart"></i> Escolher</span></p><img class="group1 item-buttom" data-aload="images/gallery/gifts/12.jpg" alt="Foto do presente" data-item-code="fdd647985dc9427593135727485ef8df121ac7bc"/></li>
               <!--end thumb -->
             </ul>
-
-
           </div>
           <!-- /.row -->
 
@@ -288,9 +286,24 @@
           <br/>
           <br/>
 
-          <center>
-            <button type="button" data-toggle="modal" data-target="#modal-message" class="btn btn-default btn-lg btn-pink">Envie sua mensagem!</button>
-          </center>
+          <div class="container-fluid">
+            <div class="row">
+              <div class="col-md-4 col-md-offset-2 col-xs-6" style="text-align: center;">
+                <button type="button" data-toggle="modal" data-target="#modal-message" class="btn btn-default btn-lg btn-pink">
+                  <i class="fa fa-heart"></i>
+                  <br/>
+                  Envie a sua mensagem
+                </button>
+              </div>
+              <div class="col-md-4 col-xs-6" style="text-align: center;">
+                <button type="button" data-toggle="modal" data-target="#modal-presence" class="btn btn-default btn-lg btn-pink">
+                  <i class="fa fa-check"></i>
+                  <br/>
+                  Confirme sua presença
+                </button>
+              </div>
+            </div>
+          </div>
         </div>
       </section>
       <!--RSVP end -->
@@ -328,33 +341,62 @@
     <!--for theme custom jquery-->
     <script type="text/javascript" src="js/custom.js"></script>
 
-    <div class="modal fade" id="modal-message" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+    <div class="modal fade" id="modal-message" tabindex="-1" role="dialog" aria-labelledby="modal-message-label">
       <div class="modal-dialog" role="document">
         <div class="modal-content">
           <div class="modal-header">
             <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-            <h4 class="modal-title" id="myModalLabel">Mensagem para o casal</h4>
+            <h4 class="modal-title" id="modal-message-label">Envie a sua mensagem</h4>
           </div>
           <div class="modal-body">
-            <div class="alert alert-success" style="display:none;" role="alert" id="modal-alert-success">
+            <div class="alert alert-success" style="display:none;" role="alert" id="modal-message-alert-success">
               <strong>Mensagem enviada. Obrigado!!!</strong>
             </div>
 
-            <div class="alert alert-danger" style="display:none;" role="alert" id="modal-alert-error">
+            <div class="alert alert-danger" style="display:none;" role="alert" id="modal-message-alert-error">
               <strong>Por favor, preencha o seu nome e a sua mensagem.</strong>
             </div>
 
-            <form role="form" target="self_" action="javascript: postContactToGoogle()" id="modal-form">
+            <form role="form" target="self_" action="javascript: postMessageToGoogle()" id="modal-message-form">
               <div class="form-group">
-                <label for="name" class="control-label">Seu nome:</label>
-                <input type="text" class="form-control" id="name" name="name">
+                <label for="message-name" class="control-label">Seu nome:</label>
+                <input type="text" class="form-control" id="message-name" name="message-name">
               </div>
               <div class="form-group">
-                <label for="message" class="control-label">Sua mensagem:</label>
-                <textarea class="form-control" id="message" name="message"></textarea>
+                <label for="message-message" class="control-label">Sua mensagem:</label>
+                <textarea class="form-control" id="message-message" name="message-message"></textarea>
               </div>
 
               <button type="submit" class="btn btn-primary">Enviar</button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="modal fade" id="modal-presence" tabindex="-1" role="dialog" aria-labelledby="modal-presence-label">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+            <h4 class="modal-title" id="modal-presence-label">Confirme sua presença</h4>
+          </div>
+          <div class="modal-body">
+            <div class="alert alert-success" style="display:none;" role="alert" id="modal-presence-alert-success">
+              <strong>Presença confirmada. Obrigado!!!</strong>
+            </div>
+
+            <div class="alert alert-danger" style="display:none;" role="alert" id="modal-presence-alert-error">
+              <strong>Por favor, preencha o seu nome.</strong>
+            </div>
+
+            <form role="form" target="self_" action="javascript: postPresenceToGoogle()" id="modal-presence-form">
+              <div class="form-group">
+                <label for="presence-name" class="control-label">Seu nome:</label>
+                <input type="text" class="form-control" id="presence-name" name="presence-name">
+              </div>
+
+              <button type="submit" class="btn btn-primary">Confirmar</button>
             </form>
           </div>
         </div>

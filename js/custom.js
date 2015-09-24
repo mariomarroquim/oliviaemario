@@ -121,9 +121,9 @@ $(".item-buttom").click(function() {
   window.location.href = "https://go.gerencianet.com.br/#/cobranca/pagar/" + $(this).attr("data-item-code");
 });
 
-function postContactToGoogle(){
-  var name = $("#name").val();
-  var message = $("#message").val();
+function postMessageToGoogle(){
+  var name = $("#message-name").val();
+  var message = $("#message-message").val();
 
   if (name !== "" && message !== "") {
     $.ajax({
@@ -133,32 +133,73 @@ function postContactToGoogle(){
       dataType: "xml",
       statusCode: {
         0: function (){
-          $("#modal-alert-error").hide();
-          $("#modal-alert-success").show();
-          $("#modal-form").trigger("reset");
+          $("#modal-message-alert-error").hide();
+          $("#modal-message-alert-success").show();
+          $("#modal-message-form").trigger("reset");
         },
         200: function (){
-          $("#modal-alert-error").hide();
-          $("#modal-alert-success").show();
-          $("#modal-form").trigger("reset");
+          $("#modal-message-alert-error").hide();
+          $("#modal-message-alert-success").show();
+          $("#modal-message-form").trigger("reset");
         },
         400: function (){
-          $("#modal-alert-error").show();
-          $("#modal-alert-success").hide();
+          $("#modal-message-alert-error").show();
+          $("#modal-message-alert-success").hide();
         },
         404: function (){
-          $("#modal-alert-error").show();
-          $("#modal-alert-success").hide();
+          $("#modal-message-alert-error").show();
+          $("#modal-message-alert-success").hide();
         },
         500: function (){
-          $("#modal-alert-error").show();
-          $("#modal-alert-success").hide();
+          $("#modal-message-alert-error").show();
+          $("#modal-message-alert-success").hide();
         }
       }
     });
   }
   else {
-    $("#modal-alert-error").show();
-    $("#modal-alert-success").hide();
+    $("#modal-message-alert-error").show();
+    $("#modal-message-alert-success").hide();
+  }
+}
+
+function postPresenceToGoogle(){
+  var name = $("#presence-name").val();
+
+  if (name !== "") {
+    $.ajax({
+      url: "https://docs.google.com/forms/d/1SH1l7rLorLI_1HnPZrVIxFJvWGX3fDBig2bkgdj2pm4/formResponse",
+      data: {"entry.1263366515" : name},
+      type: "POST",
+      dataType: "xml",
+      statusCode: {
+        0: function (){
+          $("#modal-presence-alert-error").hide();
+          $("#modal-presence-alert-success").show();
+          $("#modal-presence-form").trigger("reset");
+        },
+        200: function (){
+          $("#modal-presence-alert-error").hide();
+          $("#modal-presence-alert-success").show();
+          $("#modal-presence-form").trigger("reset");
+        },
+        400: function (){
+          $("#modal-presence-alert-error").show();
+          $("#modal-presence-alert-success").hide();
+        },
+        404: function (){
+          $("#modal-presence-alert-error").show();
+          $("#modal-presence-alert-success").hide();
+        },
+        500: function (){
+          $("#modal-presence-alert-error").show();
+          $("#modal-presence-alert-success").hide();
+        }
+      }
+    });
+  }
+  else {
+    $("#modal-presence-alert-error").show();
+    $("#modal-presence-alert-success").hide();
   }
 }

@@ -1878,6 +1878,11 @@ ul.submenu li a {
 	-webkit-transition-duration: 0.3s;
 }
 
+.item-out {
+	opacity: 0.5;
+  filter: alpha(opacity=50); /* For IE8 and earlier */
+}
+
 li p {
 	font-style: italic;
 }

@@ -1,7 +1,7 @@
 Olívia & Mário
 ==============
 
-My wedding website using HTML 5, CSS3 and JQuery.
+My wedding website using HTML 5, CSS 3 and JQuery.
 
 Support
 -------
